@@ -1,0 +1,5 @@
+assets
+www
+public/js
+node_modules/
+!node_modules/harp
