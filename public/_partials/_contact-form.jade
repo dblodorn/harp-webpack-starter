@@ -1,0 +1,35 @@
+form.contact-form(method='post', action='')
+  h4.red !{page}
+  table
+    tbody
+      tr
+        td.col1
+          h4 First Name:
+        |               
+        td.col2
+          p
+            input(type='text', size='12', maxlength='250', name='Fname')    
+      tr
+        td.col1
+          h4 Last Name:
+        |               
+        td.col2
+          p
+            input(type='text', size='12', maxlength='250', name='Lname') 
+      tr
+        td.col1
+          h4 Email Address:   
+        td.col2
+          p
+            input(type='text', size='12', maxlength='250', name='Email')
+      tr
+        td.col1
+          h4 Message:  
+        td.col2
+          p
+            input.message(type='text', size='12', maxlength='1600', name='Message')
+      tr
+        td.col1
+        td.col2
+          input(type='submit')
+

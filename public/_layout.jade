@@ -1,0 +1,17 @@
+doctype
+html
+  != partial("_partials/_head")
+  body
+    != partial("_partials/_header")
+    main
+      if current.path[0] === "index"
+        != partial("/_landing/_landing")
+      else if current.path[0] !== "index"
+        != partial("/_partials/_page")
+      else if ["404"].indexOf(current.path[0]) !== -1
+        article
+          != yield
+      else
+        != yield
+    != partial("_partials/_footer")
+    != partial("_partials/_scripts")

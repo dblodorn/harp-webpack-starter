@@ -1,0 +1,10 @@
+{
+  "pg1": {
+    "page": "pg1",
+    "headline": "Page One"
+  },
+  "pg2": {
+    "page": "pg2",
+    "headline": "Page Two"
+  }
+}

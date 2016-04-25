@@ -1,0 +1,73 @@
+//-------------------------------------------------------------------
+// INCLUDES
+//-------------------------------------------------------------------
+
+// Clearfix
+
+%clearfix
+  zoom: 1
+  &:before,
+  &:after
+    content: ""
+    display: table
+  &:after
+    clear: both
+
+// Border Box
+
+%border-box
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+  outline: 0
+
+// Hardware Acceleration
+%translate-3d
+  +vendor(transform, translate-3d(0,0,0))
+  //will-change: transform
+
+// Transition
+
+%cubic-bezier-transition
+  +vendor(transition, all .75s cubic-bezier(0.19, 1, 0.22, 1))
+
+%smooth
+  +transition(all, 0.125s, ease-in-out)
+
+%smooth-slow
+  +transition(all, 0.5s, ease-in-out)
+
+// Sizing
+
+%full-screen
+  min-height: 100%
+  min-height: 100vh
+  width: 100%
+  width: 100vw
+
+%full-bg
+  background-size: cover
+  background-repeat: no-repeat
+  background-position: 50% 20%
+  background-color: $lt-grey
+
+// Flexbox
+// Vertical alignment: https://philipwalton.github.io/solved-by-flexbox/demos/vertical-centering/
+
+%aligner
+  display: flex
+  align-items: center
+  justify-content: center
+
+%aligner-item--top
+  align-self: flex-start
+
+%aligner-item--bottom
+  align-self: flex-end
+
+// Deskign
+%border-bottom
+  border-bottom: 1px solid lighten($black, 75%)
+
+%border-top
+  border-top: 1px solid lighten($black, 75%)

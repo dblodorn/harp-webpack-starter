@@ -1,0 +1,28 @@
+//-------------------------------------------------------------------
+//  TYPE STYLING
+//-------------------------------------------------------------------
+
+h1
+  +type($monospace, 300, 10rem, 1.5, 4px, left, $type-color, none, normal)
+
+h2
+  +type($monospace, 400, 5rem, 1.5, normal, left, $type-color, none, normal)
+
+h3
+  +type($monospace, 500, 4rem, 1.5, normal, left, $type-color, none, normal)
+
+h4
+  +type($monospace, 500, 3rem, 1.5, normal, left, $type-color, none, normal)
+
+h5
+  +type($monospace, 300, 2rem, 1.5, normal, left, $type-color, none, normal)
+
+p
+  +type($monospace, 400, 1rem, 1.65, normal, left, $type-color, none, normal)
+
+a
+  color: $type-color
+  cursor: pointer
+  font-style: italic
+  &:hover
+    color: $red

@@ -1,0 +1,73 @@
+//-------------------------------------------------------------------
+//  Mixins
+//-------------------------------------------------------------------
+
+// TYPE
+// @include type($azo, 300, 1.75em, 1.35, 4px, center, lighten($black, 30%), uppercase);
+=type($font, $weight, $size, $kerning, $tracking, $align, $color, $transform, $style)
+  font-family: $font
+  font-weight: $weight
+  font-size: $size
+  line-height: $kerning
+  letter-spacing: $tracking
+  text-align: $align
+  color: $color
+  text-transform: $transform
+  font-style: $style
+  text-rendering: optimizelegibility
+
+// Vendor
+// @include vendor(border-radius, 4px);
+=vendor($property, $value...)
+  -webkit-#{$property}: $value
+  -moz-#{$property}: $value
+  -ms-#{$property}: $value
+  -o-#{$property}: $value
+  #{$property}: $value
+
+// Transition
+// @include transition(all, 0.2s, ease-in-out);
+=transition($transition-property, $transition-time, $method)
+  -webkit-transition: $transition-property $transition-time $method
+  -moz-transition: $transition-property $transition-time $method
+  -ms-transition: $transition-property $transition-time $method
+  -o-transition: $transition-property $transition-time $method
+  transition: $transition-property $transition-time $method
+
+// Box Shadow
+// @include box-shadow(0,1px,4px,rgba(0, 0, 0, 0.075));
+=box-shadow($top: 0, $left: 0, $blur: 4, $color: rgba(0, 0, 0, 0.075), $inset: false)
+  @if $inset
+    -webkit-box-shadow: inset $top $left $blur $color
+    -moz-box-shadow: inset $top $left $blur $color
+    box-shadow: inset $top $left $blur $color
+  @else
+    -webkit-box-shadow: $top $left $blur $color
+    -moz-box-shadow: $top $left $blur $color
+    box-shadow: $top $left $blur $color
+
+// Circle
+// @include circle(200px,#555);
+=circle($width, $color)
+  width: $width
+  height: $width
+  background: $color
+  -webkit-border-radius: $width / 2
+  -moz-border-radius: $width / 2
+  border-radius: $width / 2
+
+// Background Image
+// @include bg-image('img');
+
+%cover-no-repeat
+  +vendor(transform, translateZ(0))
+  background-position: center
+  background-repeat: none
+  background-size: cover
+
+$image-path-bg: "../imgs/bg" !default
+
+=bg-image($name, $size: false)
+  @extend %cover-no-repeat
+  background-image: url(#{$image-path-bg}/#{$name}.jpg)
+

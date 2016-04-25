@@ -1,0 +1,64 @@
+//-------------------------------------------------------------------
+//  TOP LEVEL SELECTOR STYLING
+//-------------------------------------------------------------------
+
+html
+  font-size: 62.5%
+  -webkit-font-smoothing: antialiased
+  text-rendering: optimizeSpeed
+
+body
+  font-size: $base-font-size
+  overflow-x: hidden
+  width: 100vw
+  min-height: 100vh
+  margin: 0
+  *
+    @extend %border-box
+
+header,
+main,
+footer
+  padding: $base-spacing
+
+header
+  z-index: $header-z
+
+nav
+  z-index: $nav-z
+
+main
+  @extend %clearfix
+  min-height: 100vh
+
+section
+  position: relative
+  z-index: $content-z
+  display: block
+  margin: 0 auto
+  background-color: $overlay
+
+article
+  z-index: $content-z
+  overflow: hidden
+
+footer
+  @extend %clearfix
+  z-index: $footer-z
+  overflow: hidden
+
+img
+  width: 100%
+  height: auto
+  margin-bottom: -3px
+
+// Select
+
+a[href],
+input[type='submit'],
+input[type='image'],
+label[for],
+select,
+button,
+.pointer
+  cursor: pointer !important

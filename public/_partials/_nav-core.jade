@@ -1,0 +1,11 @@
+ul.nav
+  li
+    h5.location-nav MENU:
+  li.home
+    a.nav-btn(href="/")
+      h5 HOME
+        span.arrow
+  for page, slug in public._data
+    li(class="#{slug}")
+      a.nav-btn(href="#{slug}.html")
+        h5 #{slug}
